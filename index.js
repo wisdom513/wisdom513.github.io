@@ -2,7 +2,8 @@
         
 let state = 0;
 
-function on(){
+let changeIcon = function(icon){
+        icon.classList.toggle('fa-x');
         if(state === 0){
                 let nav_bar = document.getElementById('nav');
                 nav_bar.style.display = 'inline-block';
@@ -20,7 +21,7 @@ let tag = 0;
 function theme(){
        if(tag === 0){
         let swich = document.getElementById('swich');
-        swich.style.transform = 'translateX(38px)';
+        swich.style.transform = 'translateX(48px)';
         let body = document.body;
         body.style.backgroundColor = 'black';
         body.style.color = 'white';
@@ -36,3 +37,19 @@ function theme(){
         tag = 0;
        } 
 }
+
+function scales(){
+        let big = document.getElementById('big');
+        big.style.width = '38px';
+        big.style.height = '38px';
+}
+
+function bigImg(x) {
+        x.style.height = "64px";
+        x.style.width = "64px";
+      }
+      
+      function normalImg(x) {
+        x.style.height = "32px";
+        x.style.width = "32px";
+      }

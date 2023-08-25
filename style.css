@@ -53,17 +53,18 @@ body{
     animation: heart_beat infinite 2000ms;
 }
 #split{
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 #split p{
     font-size: 20px;
     text-align: center;
     margin-top: -14px;
 }
-#split p span{
+#big{
     margin: 10px;
     background-color: rgb(192, 186, 186);
     padding: 10px;
+    transition: 0.8s;
 }
 
 /* animation */
@@ -204,11 +205,15 @@ img{
         position: absolute;
         transition: 500ms;
     }
+
+    .fa-solid{
+        margin: 20px;
+        font-size: 30px;
+    }
     #mobile{
       display: block;  
       cursor: pointer;
       height: 50px;
-      background-color: #bd0b0b;
     }
     #nav{
         color: black;
@@ -216,29 +221,34 @@ img{
         opacity: 1;
         float: right;
         display: none;
+        width: 70%;
+        height: 100vh;
     }
     #nav p{
         justify-content: flex-end;
     }
 
     #mood{
-        width: 60px;
-        height: 20px;
         border-radius: 50px;
-        border: 1px solid black;
+        height: 30px;
+        width: 80px;
         transition: 500ms;
     }
     #swich{
-        width: 20px;
-        height: 19px;
+        width: 30px;
+        height: 30px;
         border-radius: 50px;
         background-color: #b1d5f5;
+        margin-left: -50px;
         transition: 500ms;
     }
-
+    .space{
+        margin: 5rem;
+    }
     #landing_page{
         display: block;
         margin: 2rem  2rem;
+        margin-top: 5rem;
     }
     #fd{
         width: 300px;
