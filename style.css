@@ -15,7 +15,11 @@ body{
     font-family: 'Space Grotesk', sans-serif;
     position: relative;
 }
-
+/* desktop nav */
+.active::after{
+    color: black;
+    margin: 10px;
+}
 #mood{
     width: 1000px;
     background-color: rgb(211, 9, 9);
@@ -24,7 +28,7 @@ body{
     opacity: 0;
     height: 4rem;
 }
-#swich{
+#swish{
     width: 30px;
 }
 
@@ -35,12 +39,58 @@ body{
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+.card_fd{
+    position: relative;
+    transform-style: preserve-3d;
+    width: 350px;
+    transition: transform 1s;
+    animation: rotate_fd infinite 8000ms;
+}
+.card_fd.active{
+    transform: perspective(300px) rotateY(180deg);
+}
+.front{
+    position: absolute;
+    top: 0;
+    left: 162px;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    background-color: black;
+    color: #7fffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border: 2px solid #7fffd4;
+    backface-visibility: hidden;
+}
+.front p{
+    font-size: 200px;
+    text-align: center;
+    font-weight: 600;
+}
+.back{
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 162px;
+    border: 2px solid #7fffd4;
+    transform: rotateY(180deg);
+}
+.back img{
+    width: 350px;
+    height: 350px;
+    filter: grayscale(100%);
+}
 #fd{
     width: 350px;
     height: 350px;
     background-color: black;
     color: aliceblue;
-    box-shadow: 15px 10px 3px rgb(36, 20, 46);
+    box-shadow: 15px 10px 3px #7fffd4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,15 +100,25 @@ body{
     
     font-size: 180px;
     font-weight: 600;
-    animation: heart_beat infinite 2000ms;
+    animation: heart_ beat infinite 2000ms;
+    
 }
-#split{
-    margin-top: 5rem;
+.right_container{
+    position: relative;
 }
-#split p{
-    font-size: 20px;
+.split{
+    position: absolute;
+    top: 71%;
+    left: 0px;
+    color: #000000;
+    background-color: #7fffd446;
+    width: 350px;
+    backdrop-filter: blur(3px);
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 2;
     text-align: center;
-    margin-top: -14px;
+    padding: 10px 0;
 }
 #big{
     margin: 10px;
@@ -71,6 +131,13 @@ body{
 @keyframes heart_beat{
     100%{
         transform: scale(1.4);
+    }
+}
+
+/* animation */
+@keyframes rotate_fd{
+    100%{
+        transform: rotateY(180deg);
     }
 }
 
@@ -88,20 +155,28 @@ body{
 #lift_container p{
     line-height: 2;
 }
+/* buttons */
 .btn{
     margin: 1rem 0;
     padding: 10px 25px;
-    background-color: black;
-    color: aliceblue;
-    box-shadow: 15px 10px 3px #24142e;   
-    transition: 0.4s;
+    background-color: #7fffd4;
+    color: #000000;
+    border: 1px solid #7fffd4;
+    box-shadow: 5px 5px 3px #000000; 
+    font-size: 20px;  
+    transition: 0.4s;  
 }
 .btn:hover{
     margin: 1rem 0;
     padding: 10px 25px;
-    background-color: rgb(37, 37, 37);
-    color: #b1d5f5;
-    box-shadow: none;   
+    background-color: #7fffd4;
+    color: #000000;
+    box-shadow: none;
+    border: 1px solid #000000;
+    font-weight: 600;
+}
+.bb{
+    animation: heart_ beat infinite 2000ms;
 }
 
 /* skill */
@@ -154,23 +229,7 @@ img{
     width: 500px;
     margin-bottom: 2.5rem;
 }
-.bb{
-    margin: 1rem 0;
-    width: 500px;
-    padding: 15px 25px;
-    background-color: black;
-    color: aliceblue;
-    box-shadow: 15px 10px 3px #24142e;   
-    transition: 0.4s; 
-}
-.bb:hover{
-    margin: 1rem 0;
-    width: 500px;
-    padding: 15px 25px;
-    background-color: rgb(37, 37, 37);
-    color: #b1d5f5;
-    box-shadow: none;   
-}
+
 
 #right_container form input[type=text]{
     padding: 20px;
@@ -182,14 +241,17 @@ img{
     height: 500px;
 }
 .card{
-    width: 60%;
-    padding: 2rem;
+    width: 100%;
+    padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 1px 1px 8px black;
-    background-color: #b1d5f5;
+    background-color: #7fffd47a;
 }
 .card img{
     width: 100%;
+}
+.card_text{
+    height:100px;
 }
 .card_text h2{
     margin-top: 1rem;
@@ -234,7 +296,7 @@ img{
         width: 80px;
         transition: 500ms;
     }
-    #swich{
+    #swish{
         width: 30px;
         height: 30px;
         border-radius: 50px;
@@ -251,7 +313,7 @@ img{
         margin-top: 5rem;
     }
     #fd{
-        width: 300px;
+        width: 100%;
         font-size: 14px;
         margin: 2rem 1rem;
     }
@@ -329,6 +391,3 @@ img{
         width: 100%;
     }
 }
-
-
-
