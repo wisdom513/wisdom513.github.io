@@ -1,4 +1,3 @@
-      
         
 let state = 0;
 
@@ -53,3 +52,9 @@ function bigImg(x) {
         x.style.height = "32px";
         x.style.width = "32px";
       }
+
+//       const card = document.getElementById("card_fd")
+
+//       card.addEventListener("click", () => {
+//         card_fd.classList.add("active")
+//       })
